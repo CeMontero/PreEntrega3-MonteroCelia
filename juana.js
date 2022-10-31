@@ -11,12 +11,13 @@ let carrito = {}
 
 // Eventos
 
-document.addEventListener('DOMContentLoaded', e => { fetchData() });
-
-if (localStorage.getItem('carrito')) {
-    carrito = JSON.parse(localStorage.getItem('carrito'))
-    imprimirCarrito()
-}
+document.addEventListener('DOMContentLoaded', e => {
+    fetchData()
+    if (localStorage.getItem('carrito')) {
+        carrito = JSON.parse(localStorage.getItem('carrito'))
+        pintarCarrito()
+    }
+});
 
 cards.addEventListener('click', e => { addCarrito(e) });
 items.addEventListener('click', e => { btnAumentarDisminuir(e) })
